@@ -1,0 +1,42 @@
+Iata cateva erori observate in rezolvarile primei teme. Am scris si ccaeva solutii potentiale:
+
+jupyter notebook care nu ruleaza
+solutie: Kernel -> Restart and run all
+
+deadline depasit:
+solutie: propune-ti sa trimiti tema cu 1 zi mi repede de deadline
+
+pseudoniversa calculata gresit: np.linalg.pinv(w)
+solutie: citeste cursul; nu te lua dupa altii
+
+warning: RuntimeWarning: overflow encountered in square
+solutie: scalarea datelor, ponderile sa nu fie intiializate prea mari
+verificare de buguri
+warnings: nu se ingora, in general!
+update de pachete: conda update conda --yes && conda update --all --yes 
+
+lipsa implementare functii:
+solutie: implementare nevectorizata (se scad 2 puncte de regula, dar din 3-4 functii castigi 1-2 puncte)
+
+regularizare: theta[1:], nu theta[0:]
+solutie: citeste cursul, e atentionare acolo; nu te lua dupa altii
+
+folosire de functii din sklearn:
+solutia: implementare cu functii de numpy sau implementare proprie (np.mean((y-y_hat)**2), sau np.sum((y-y_hat)**2)/len(y)
+
+functii implementate gresit:
+ex: l2_error = lmbda * np.sqrt(np.sum(w**2)) - nu se foloseste sqrt, e suma de patrate
+solutia: citit cursul
+daca nu esti sigur de vectorizare: implementare in doua variante(vectorizat si traditional), assert; se scoate cand implementarea vectorizata e testata pe suficiente cazuri
+
+gradient cu implementare indoielnica 
+solutie: gradient checking, http://ufldl.stanford.edu/tutorial/supervised/DebuggingGradientChecking/
+demo in notebook de gradient checking
+
+functia de eroare nu scade pe setul de antrenare:
+cum observi: plot sau tiparire pe masura ce se face antrenarea
+solutii:
+(rapid) micsoreaza learning rate
+verifica implementarea functiei de eroare cu implementare nevectorizata
+verifica implemtare de gradient - gradient checking sau implementare nevectorizata
+nu se lasa cod notebook care duce la cresterea functiei de eroare! 
